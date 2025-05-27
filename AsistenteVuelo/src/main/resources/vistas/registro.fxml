@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.mycompany.asistentevuelo.RegistroController"
+      spacing="15" alignment="CENTER" styleClass="fondo-registro">
+    
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40" />
+    </padding>
+    
+    <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+        <image>
+            <Image url="/imagenes/logo.png" />
+        </image>
+    </ImageView>
+    
+    <Label text="Registro de Usuario" styleClass="titulo-principal">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+    
+    <GridPane hgap="10" vgap="10" alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="100" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+        </columnConstraints>
+        
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="campoNombre" promptText="Ingrese su nombre" 
+                   GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <Label text="Apellido:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <TextField fx:id="campoApellido" promptText="Ingrese su apellido" 
+                   GridPane.rowIndex="1" GridPane.columnIndex="1" />
+        
+        <Label text="Correo:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+        <TextField fx:id="campoCorreo" promptText="Ingrese su correo" 
+                   GridPane.rowIndex="2" GridPane.columnIndex="1" />
+        
+        <Label text="Teléfono:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+        <TextField fx:id="campoTelefono" promptText="Ingrese su teléfono" 
+                   GridPane.rowIndex="3" GridPane.columnIndex="1" />
+        
+        <Label text="Contraseña:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+        <PasswordField fx:id="campoContrasena" promptText="Mínimo 6 caracteres" 
+                       GridPane.rowIndex="4" GridPane.columnIndex="1" />
+        
+        <Label text="Confirmar:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+        <PasswordField fx:id="campoConfirmarContrasena" promptText="Repita la contraseña" 
+                       GridPane.rowIndex="5" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Registrarse" onAction="#registrar" styleClass="boton-primario" />
+        <Button text="Volver" onAction="#volverALogin" styleClass="boton-secundario" />
+    </HBox>
+</VBox>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/21" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.mycompany.asistentevuelo.CheckInController">
+    
+    <stylesheets>
+        <URL value="@../estilos/estilo.css" />
+    </stylesheets>
+    
+    <Label text="Check-In Automático" styleClass="titulo-seccion">
+        <font>
+            <Font name="System Bold" size="18.0" />
+        </font>
+    </Label>
+    
+    <GridPane hgap="10" vgap="10">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        
+        <!-- Fila 0 -->
+        <Label text="Número de Reserva:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtCodigoReserva" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Button text="Buscar Reserva" onAction="#buscarReserva" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        
+        <!-- Fila 1 -->
+        <VBox fx:id="panelDetallesVuelo" spacing="10" GridPane.columnSpan="3" GridPane.rowIndex="1">
+            <Label text="Detalles del Vuelo:" styleClass="subtitulo"/>
+            <Label fx:id="lblNumeroVuelo"/>
+            <Label fx:id="lblDestino"/>
+            <Label fx:id="lblFechaHora"/>
+        </VBox>
+        
+        <!-- Fila 2 -->
+        <Label text="Seleccionar Asiento:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <ComboBox fx:id="comboAsientos" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <!-- Fila 3 -->
+        <Label text="Número de Maletas:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Spinner fx:id="spinnerMaletas" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        
+        <!-- Fila 4 -->
+        <CheckBox fx:id="checkDocumentosListos" text="Documentos listos y verificados" 
+                  GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4"/>
+        
+        <!-- Fila 5 -->
+        <Label fx:id="lblEstadoCheckIn" styleClass="estado" 
+               GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="5"/>
+        
+        <!-- Fila 6 -->
+        <Button text="Confirmar Check-In" onAction="#confirmarCheckIn" fx:id="btnConfirmarCheckIn" 
+                GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <Button text="Limpiar" onAction="#limpiarFormulario" 
+                GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    </GridPane>
+</VBox>

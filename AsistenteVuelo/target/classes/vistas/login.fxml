@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.mycompany.asistentevuelo.LoginController"
+      spacing="20" alignment="CENTER" styleClass="fondo-login">
+    
+    <padding>
+        <Insets top="30" right="50" bottom="30" left="50" />
+    </padding>
+    
+    <ImageView fitWidth="120" fitHeight="120" preserveRatio="true">
+        <image>
+            <Image url="/imagenes/logo.png" />
+        </image>
+    </ImageView>
+    
+    <Label text="Asistente de Vuelos" styleClass="titulo-principal">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+    
+    <Label text="Iniciar Sesión" styleClass="subtitulo">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    
+    <GridPane hgap="10" vgap="15" alignment="CENTER">
+        <Label text="Correo:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+        <TextField fx:id="campoCorreo" promptText="Ingrese su correo" 
+                   GridPane.rowIndex="0" GridPane.columnIndex="1" />
+        
+        <Label text="Contraseña:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+        <PasswordField fx:id="campoContrasena" promptText="Ingrese su contraseña" 
+                       GridPane.rowIndex="1" GridPane.columnIndex="1" />
+    </GridPane>
+    
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Iniciar Sesión" onAction="#iniciarSesion" styleClass="boton-primario" />
+        <Button text="Registrarse" onAction="#mostrarRegistro" styleClass="boton-secundario" />
+    </HBox>
+    
+    <Label text="Usuario de prueba: admin@sistema.com / admin123" styleClass="texto-ayuda" />
+</VBox>

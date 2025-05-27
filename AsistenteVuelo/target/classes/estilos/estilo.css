@@ -1,0 +1,78 @@
+/* Estilos generales */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Estilos para login */
+.fondo-login {
+    -fx-background-color: linear-gradient(to bottom right, #1a75ff, #00ccff);
+    -fx-padding: 30px;
+}
+
+.titulo-app {
+    -fx-font-size: 26px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Botones */
+.boton-primario {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5px;
+}
+
+.boton-primario:hover {
+    -fx-background-color: #2980b9;
+    -fx-cursor: hand;
+}
+
+.boton-secundario {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5px;
+}
+
+.boton-secundario:hover {
+    -fx-background-color: #7f8c8d;
+    -fx-cursor: hand;
+}
+/* Sección de Check-In e Itinerario */
+.titulo-seccion {
+    -fx-font-size: 18px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+}
+
+.subtitulo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.estado {
+    -fx-font-size: 12px;
+    -fx-text-fill: #e74c3c;
+    -fx-padding: 5px;
+}
+
+/* GridPanels */
+.grid-pane {
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-padding: 15px;
+}
+
+/* ListView de recomendaciones */
+.list-view {
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+}
+

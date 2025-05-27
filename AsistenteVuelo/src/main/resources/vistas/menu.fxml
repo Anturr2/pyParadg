@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.mycompany.asistentevuelo.MenuController"
+            prefHeight="600" prefWidth="800">
+    
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="barra-superior">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20" />
+            </padding>
+            
+            <ImageView fitWidth="40" fitHeight="40" preserveRatio="true">
+                <image>
+                    <Image url="/imagenes/logo.png" />
+                </image>
+            </ImageView>
+            
+            <Label text="Asistente de Vuelos" styleClass="titulo-app">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <Label fx:id="labelBienvenida" styleClass="texto-bienvenida">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            
+            <Button text="Cerrar Sesión" onAction="#cerrarSesion" styleClass="boton-cerrar-sesion" />
+        </HBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.6" orientation="VERTICAL">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+                
+                <Label text="Vuelos Disponibles" styleClass="subtitulo-seccion">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                
+                <TableView fx:id="tablaVuelos" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="columnaCodigo" text="Código" prefWidth="80" />
+                        <TableColumn fx:id="columnaOrigen" text="Origen" prefWidth="100" />
+                        <TableColumn fx:id="columnaDestino" text="Destino" prefWidth="100" />
+                        <TableColumn fx:id="columnaFechaSalida" text="Fecha de Salida" prefWidth="150" />
+                        <TableColumn fx:id="columnaPrecio" text="Precio" prefWidth="100" />
+                    </columns>
+                </TableView>
+                
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Reservar Vuelo" onAction="#reservarVuelo" styleClass="boton-primario" />
+                </HBox>
+            </VBox>
+            
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                </padding>
+                
+                <Label text="Mis Reservas" styleClass="subtitulo-seccion">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                
+                <ListView fx:id="listaReservas" VBox.vgrow="ALWAYS" />
+                
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Cancelar Reserva" onAction="#cancelarReserva" styleClass="boton-secundario" />
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>
